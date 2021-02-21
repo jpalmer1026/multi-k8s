@@ -4,11 +4,11 @@ docker build -t jpalmer1026/multi-worker:latest -t jpalmer1026/multi-worker:$SHA
 
 docker push jpalmer1026/multi-client:latest
 docker push jpalmer1026/multi-server:latest
-docker push jpalmer1026/multi-work:latest
+docker push jpalmer1026/multi-worker:latest
 
 docker push jpalmer1026/multi-client:$SHA
 docker push jpalmer1026/multi-server:$SHA
-docker push jpalmer1026/multi-work:$SHA
+docker push jpalmer1026/multi-worker:$SHA
 
 kubectl apply -f k8s
 kubectl set image deployments/server-deployment server=jpalmer1026/multi-server:$SHA
